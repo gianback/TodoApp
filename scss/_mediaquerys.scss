@@ -1,0 +1,70 @@
+@import "./main";
+@import "./mixins";
+
+@media (min-width: 478px) {
+  .buttons {
+    @include grid(grid, 2, 1fr);
+    justify-items: center;
+    align-items: center;
+  }
+  .btn {
+    width: 70%;
+  }
+}
+
+@media (min-width: 992px) {
+  body {
+    height: 100vh;
+    .header {
+      height: 50vh;
+    }
+    .main {
+      @include grid(grid, 2, 1rem);
+      .columna {
+        display: block;
+        justify-content: start;
+        align-items: flex-start;
+        height: 100%;
+        padding-top: 3rem;
+      }
+      .input-tarea-container {
+        order: 0;
+        .input-tarea {
+          width: 53rem;
+        }
+      }
+      .buttons {
+        .btn {
+          max-width: 15.5rem;
+        }
+      }
+      .avatar-comment {
+        order: 1;
+      }
+      .btn-add-tarea {
+        max-width: 20rem;
+      }
+    }
+  }
+
+  .pendiente {
+    margin: 2rem;
+  }
+
+  .avatar-comment {
+    margin-top: 11rem;
+  }
+  .completado {
+    margin: 2rem;
+  }
+  .arrow-link {
+    display: none;
+  }
+}
+@media (min-width: 1400px) {
+  .buttons {
+    @include flex(flex, row, space-between, center);
+    width: auto;
+    margin: 0;
+  }
+}

@@ -1,0 +1,45 @@
+.animado {
+  transition: opacity, background-color 0.5s;
+  animation-name: mostrar;
+  animation-duration: 0.75s;
+  animation-timing-function: ease;
+}
+
+@keyframes mostrar {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.25;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  75% {
+    opacity: 0.75;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.arrow {
+  display: flex;
+  margin-top: 10rem;
+  color: rgb(216, 216, 82);
+  font-size: 8rem;
+  animation: moverArrow 3s ease infinite;
+}
+
+@keyframes moverArrow {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-50px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

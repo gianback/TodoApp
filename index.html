@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo App</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;0,700;1,300&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+  />
+  <body class="body">
+    <header class="header">
+      <div>
+        <h1 class="header_title">Todo App 🖊</h1>
+        <p class="text-center">Día organizado, vida organizada</p>
+      </div>
+      <a href="#principal" class="arrow-link">
+        <i class="fa-solid fa-circle-arrow-down arrow"></i>
+      </a>
+    </header>
+
+    <main id="principal" class="main">
+      <section class="columna columna-1">
+        <div class="container column-add">
+          <div class="input-tarea-container">
+            <h2 class="text-center">¿Qué actividad harás hoy?</h2>
+
+            <input type="text" placeholder="Mi tarea" class="input-tarea" />
+            <button class="btn-add-tarea btn btn-primary">Agregar Tarea</button>
+          </div>
+          <div class="avatar-comment">
+            <p class="text-center">
+              Si estas buscando una app para poder organizarte, llegaste al
+              lugar correcto!
+            </p>
+            <img
+              src="./assets/img-avatar.png"
+              alt="avatar"
+              class="img-avatar"
+            />
+          </div>
+        </div>
+      </section>
+      <section class="columna columna-2">
+        <div class="container column-add">
+          <p>Filtrar por:</p>
+          <div class="buttons">
+            <button class="btn btn-total-tareas" type="button">
+              Total tareas:
+            </button>
+            <button class="btn btn-pendientes" type="button">Pendientes</button>
+            <button class="btn btn-completados">Completados</button>
+            <button class="btn borrar-completados" type="button">
+              Borrar Completados
+            </button>
+          </div>
+        </div>
+        <ul class="lista-tareas"></ul>
+      </section>
+    </main>
+    <script src="./js/app.js" type="module"></script>
+  </body>
+</html>

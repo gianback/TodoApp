@@ -1,0 +1,16 @@
+@import "./variables";
+@import "./mixins";
+.pendiente {
+  background-color: $secundary-color;
+  border-radius: 1rem;
+  color: $white;
+  margin: 1rem;
+}
+
+.completado {
+  background-color: $completado;
+  color: black;
+  border-radius: 1rem;
+  text-decoration: line-through;
+  margin: 1rem;
+}
