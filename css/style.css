@@ -1,11 +1,6 @@
 body {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  display: -ms-grid;
+  display: grid;
   min-height: 100vh;
   width: 100%;
   margin: 0;
@@ -72,7 +67,9 @@ li {
 }
 
 .btn {
-  background-color: #2a9cad;
+  background-color: #324155;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+          box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   color: #ededf8;
   width: 100%;
   border: none;
@@ -103,10 +100,6 @@ li {
   margin: 1rem 0;
 }
 
-.mg-top {
-  margin-top: 2rem;
-}
-
 .view {
   padding: 1rem;
   display: -webkit-box;
@@ -119,10 +112,6 @@ li {
       -ms-flex-align: center;
           align-items: center;
   border-radius: 1rem;
-}
-
-.checkbox {
-  background-color: red;
 }
 
 .visible {
@@ -139,9 +128,33 @@ li {
   text-align: center;
 }
 
+.alerta {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 5rem;
+  width: 100%;
+  background-color: #28cdaa;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  border-radius: 1rem;
+}
+
 .header {
   height: 100vh;
   width: 100%;
+  overflow: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -172,7 +185,17 @@ li {
 
 .main {
   width: 100%;
-  height: 100%;
+  min-height: 100vh;
+  background: #ADA996;
+  /* fallback for old browsers */
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-gradient(linear, left top, right top, from(#EAEAEA), color-stop(#DBDBDB), color-stop(#F2F2F2), to(#ADA996));
+  background: linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.main .columna-1 {
+  padding: 2rem 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -180,21 +203,19 @@ li {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background: url("../assets/fondo-noche.jpg");
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.main .column-add {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  margin-top: 3rem;
+.main .columna-1 .column-add {
+  height: 23rem;
 }
 
-.main .column-add .input-tarea-container {
+.main .columna-1 .column-add .input-tarea-container {
   height: 100%;
   width: 100%;
   display: -webkit-box;
@@ -216,31 +237,7 @@ li {
           order: 1;
 }
 
-.columna {
-  height: 100vh;
-}
-
-.columna .columna-1 {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: start;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.columna .columna-1 .btn-add-tarea {
-  width: 100%;
-}
-
-.input-tarea {
+.main .columna-1 .column-add .input-tarea-container .input-tarea {
   display: block;
   height: 4rem;
   width: 100%;
@@ -250,35 +247,12 @@ li {
           box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   outline: none;
   padding: 0 1rem;
+  font-size: 1.9rem;
 }
 
-.avatar-comment {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin-top: 3rem;
-  border: none;
-  -webkit-box-ordinal-group: 1;
-      -ms-flex-order: 0;
-          order: 0;
-}
-
-.avatar-comment .img-avatar {
-  max-width: 20rem;
-}
-
-.lista-tareas {
-  margin-top: 3rem;
+.subtitle {
+  color: black;
+  font-size: 2.5rem;
 }
 
 .icons-container {
@@ -300,7 +274,7 @@ li {
 }
 
 .pendiente {
-  background-color: #324155;
+  background-color: #cb3725;
   border-radius: 1rem;
   color: #ededf8;
   margin: 1rem;
@@ -366,7 +340,7 @@ li {
   display: -ms-flexbox;
   display: flex;
   margin-top: 10rem;
-  color: #d8d852;
+  color: white;
   font-size: 8rem;
   -webkit-animation: moverArrow 3s ease infinite;
           animation: moverArrow 3s ease infinite;
@@ -404,7 +378,17 @@ li {
 
 .main {
   width: 100%;
-  height: 100%;
+  min-height: 100vh;
+  background: #ADA996;
+  /* fallback for old browsers */
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-gradient(linear, left top, right top, from(#EAEAEA), color-stop(#DBDBDB), color-stop(#F2F2F2), to(#ADA996));
+  background: linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.main .columna-1 {
+  padding: 2rem 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -412,21 +396,19 @@ li {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background: url("../assets/fondo-noche.jpg");
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.main .column-add {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  margin-top: 3rem;
+.main .columna-1 .column-add {
+  height: 23rem;
 }
 
-.main .column-add .input-tarea-container {
+.main .columna-1 .column-add .input-tarea-container {
   height: 100%;
   width: 100%;
   display: -webkit-box;
@@ -448,31 +430,7 @@ li {
           order: 1;
 }
 
-.columna {
-  height: 100vh;
-}
-
-.columna .columna-1 {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: start;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.columna .columna-1 .btn-add-tarea {
-  width: 100%;
-}
-
-.input-tarea {
+.main .columna-1 .column-add .input-tarea-container .input-tarea {
   display: block;
   height: 4rem;
   width: 100%;
@@ -482,35 +440,12 @@ li {
           box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   outline: none;
   padding: 0 1rem;
+  font-size: 1.9rem;
 }
 
-.avatar-comment {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin-top: 3rem;
-  border: none;
-  -webkit-box-ordinal-group: 1;
-      -ms-flex-order: 0;
-          order: 0;
-}
-
-.avatar-comment .img-avatar {
-  max-width: 20rem;
-}
-
-.lista-tareas {
-  margin-top: 3rem;
+.subtitle {
+  color: black;
+  font-size: 2.5rem;
 }
 
 @media (min-width: 478px) {
@@ -530,30 +465,27 @@ li {
   }
 }
 
-@media (min-width: 992px) {
+@media (min-width: 768px) {
   body {
-    height: 100vh;
-  }
-  body .header {
-    height: 50vh;
-  }
-  body .main {
-    display: -ms-grid;
-    display: grid;
-    gap: 1rem;
+    max-height: 100vh;
     -ms-grid-columns: (1fr)[2];
         grid-template-columns: repeat(2, 1fr);
   }
-  body .main .columna {
-    display: block;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: start;
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start;
+  body .main {
+    max-height: 100vh;
+    overflow: overlay;
+  }
+  .arrow-link {
+    display: none;
+  }
+  .subtitle {
+    font-size: 3rem;
+  }
+}
+
+@media (min-width: 992px) {
+  body {
     height: 100%;
-    padding-top: 3rem;
   }
   body .main .input-tarea-container {
     -webkit-box-ordinal-group: 1;
@@ -577,14 +509,11 @@ li {
   .pendiente {
     margin: 2rem;
   }
-  .avatar-comment {
-    margin-top: 11rem;
-  }
   .completado {
     margin: 2rem;
   }
-  .arrow-link {
-    display: none;
+  .subtitle {
+    font-size: 3.6rem;
   }
 }
 

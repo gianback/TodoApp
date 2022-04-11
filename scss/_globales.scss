@@ -1,14 +1,14 @@
 @import "./variables";
 @import "./mixins";
 body {
-  display: flex;
-  flex-direction: column;
+  display: grid;
   min-height: 100vh;
   width: 100%;
   margin: 0;
   font-family: "Roboto", sans-serif;
   font-size: 1.8rem;
   color: $white;
+
 }
 html {
   font-size: 62.5%;
@@ -58,7 +58,8 @@ li {
 }
 
 .btn {
-  background-color: $primary-color;
+  background-color: $secundary-color;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   color: $white;
   width: 100%;
   border: none;
@@ -67,6 +68,7 @@ li {
   padding: 1.1rem;
   cursor: pointer;
 }
+
 .buttons {
   @include flex(flex, column, center, space-between);
   margin-top: 3rem;
@@ -90,4 +92,15 @@ li {
 //Utilidades
 .text-center {
   text-align: center;
+}
+
+.alerta{
+  @include flex(flex,row,center,center);
+  height: 5rem;
+  width: 100%;
+  background-color: $completado;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  border-radius: 1rem;
 }

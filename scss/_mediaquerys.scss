@@ -11,22 +11,28 @@
     width: 70%;
   }
 }
-
+@media (min-width: 768px){
+  body{
+    max-height: 100vh;
+    grid-template-columns: repeat(2,1fr);
+    .main{
+      max-height: 100vh;
+      overflow: overlay;
+    }
+    
+    
+  }
+  .arrow-link {
+    display: none;
+  }
+  .subtitle{
+    font-size: 3rem;
+  }
+}
 @media (min-width: 992px) {
   body {
-    height: 100vh;
-    .header {
-      height: 50vh;
-    }
+    height: 100%;
     .main {
-      @include grid(grid, 2, 1rem);
-      .columna {
-        display: block;
-        justify-content: start;
-        align-items: flex-start;
-        height: 100%;
-        padding-top: 3rem;
-      }
       .input-tarea-container {
         order: 0;
         .input-tarea {
@@ -50,16 +56,13 @@
   .pendiente {
     margin: 2rem;
   }
-
-  .avatar-comment {
-    margin-top: 11rem;
-  }
   .completado {
     margin: 2rem;
   }
-  .arrow-link {
-    display: none;
+  .subtitle{
+    font-size: 3.6rem;
   }
+
 }
 @media (min-width: 1400px) {
   .buttons {

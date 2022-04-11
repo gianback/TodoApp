@@ -54,6 +54,7 @@ const cambiarClase = (elemento, oldClase, newClase) => {
 //Eventos
 btnAddTarea.addEventListener("click", () => {
   const txtInput = d.querySelector(".input-tarea");
+  const colInput = d.querySelector('.input-tarea-container')
 
   if (txtInput.value.length === 0) return;
 
@@ -61,6 +62,15 @@ btnAddTarea.addEventListener("click", () => {
   todoList.agregarTodo(nuevoTodo);
 
   todoHtml(nuevoTodo);
+  if(!d.querySelector('.alerta')){
+    const divAlert = d.createElement('div');
+    divAlert.innerHTML = `Tarea agregada correctamente !`;
+    divAlert.classList.add('alerta');
+    colInput.append(divAlert);
+    setTimeout(() => {
+      colInput.removeChild(divAlert);
+    }, 3000);
+  }
   txtInput.value = "";
 });
 
@@ -124,8 +134,6 @@ btnPendientes.addEventListener("click", () => {
     if (el.completado === false) {
       for (const nodo of divTodoList.children) {
         if (nodo.classList.contains("pendiente")) {
-          /*  nodo.classList.remove("hidden");
-          nodo.classList.add("visible"); */
           cambiarClase(nodo, "hidden", "visible");
         }
       }
@@ -133,8 +141,6 @@ btnPendientes.addEventListener("click", () => {
       for (const nodo of divTodoList.children) {
         if (nodo.classList.contains("completado")) {
           cambiarClase(nodo, "visible", "hidden");
-          /*  nodo.classList.remove("visible");
-          nodo.classList.add("hidden"); */
         }
       }
     }
