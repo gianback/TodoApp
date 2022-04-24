@@ -102,16 +102,16 @@ li {
 
 .view {
   padding: 1rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 75% 20%;
+      grid-template-columns: 75% 20%;
+  gap: 5%;
   border-radius: 1rem;
+}
+
+.view > label {
+  line-height: 2.5rem;
 }
 
 .visible {
